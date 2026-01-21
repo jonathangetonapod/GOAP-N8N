@@ -73,18 +73,18 @@ This repository contains the configuration files needed to deploy n8n on Railway
 
 4. **Add PostgreSQL**
    ```bash
-   railway add --database postgresql
+   railway add --database postgres
    ```
 
 5. **Set Environment Variables**
    ```bash
-   railway variables set N8N_HOST=your-app-name.up.railway.app
-   railway variables set N8N_PROTOCOL=https
-   railway variables set WEBHOOK_URL=https://your-app-name.up.railway.app/
-   railway variables set N8N_ENCRYPTION_KEY=$(openssl rand -base64 32)
-   railway variables set N8N_BASIC_AUTH_ACTIVE=true
-   railway variables set N8N_BASIC_AUTH_USER=admin
-   railway variables set N8N_BASIC_AUTH_PASSWORD=your-password
+   railway variables --set "N8N_HOST=your-app-name.up.railway.app"
+   railway variables --set "N8N_PROTOCOL=https"
+   railway variables --set "WEBHOOK_URL=https://your-app-name.up.railway.app/"
+   railway variables --set "N8N_ENCRYPTION_KEY=$(openssl rand -base64 32)"
+   railway variables --set "N8N_BASIC_AUTH_ACTIVE=true"
+   railway variables --set "N8N_BASIC_AUTH_USER=admin"
+   railway variables --set "N8N_BASIC_AUTH_PASSWORD=your-password"
    ```
 
 6. **Deploy**

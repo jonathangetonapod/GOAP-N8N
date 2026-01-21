@@ -50,15 +50,15 @@ Copy the output and use it in the next commands:
 
 ```bash
 # Set encryption key (use the output from above)
-railway variables set N8N_ENCRYPTION_KEY="your-generated-key-here"
+railway variables --set "N8N_ENCRYPTION_KEY=your-generated-key-here"
 
 # Set basic auth credentials
-railway variables set N8N_BASIC_AUTH_ACTIVE=true
-railway variables set N8N_BASIC_AUTH_USER=admin
-railway variables set N8N_BASIC_AUTH_PASSWORD="your-secure-password"
+railway variables --set "N8N_BASIC_AUTH_ACTIVE=true"
+railway variables --set "N8N_BASIC_AUTH_USER=admin"
+railway variables --set "N8N_BASIC_AUTH_PASSWORD=your-secure-password"
 
 # Set timezone
-railway variables set GENERIC_TIMEZONE="America/New_York"
+railway variables --set "GENERIC_TIMEZONE=America/New_York"
 ```
 
 ## Step 5: Deploy
@@ -88,9 +88,9 @@ railway domain --generate
 Once you have your domain (e.g., `your-app.up.railway.app`), set these variables:
 
 ```bash
-railway variables set N8N_HOST="your-app.up.railway.app"
-railway variables set N8N_PROTOCOL=https
-railway variables set WEBHOOK_URL="https://your-app.up.railway.app/"
+railway variables --set "N8N_HOST=your-app.up.railway.app"
+railway variables --set "N8N_PROTOCOL=https"
+railway variables --set "WEBHOOK_URL=https://your-app.up.railway.app/"
 ```
 
 ## Step 8: Set Database Connection Variables
@@ -98,11 +98,11 @@ railway variables set WEBHOOK_URL="https://your-app.up.railway.app/"
 The database variables are automatically available. Add them to your service:
 
 ```bash
-railway variables set DB_POSTGRESDB_HOST='${{Postgres.PGHOST}}'
-railway variables set DB_POSTGRESDB_PORT='${{Postgres.PGPORT}}'
-railway variables set DB_POSTGRESDB_DATABASE='${{Postgres.PGDATABASE}}'
-railway variables set DB_POSTGRESDB_USER='${{Postgres.PGUSER}}'
-railway variables set DB_POSTGRESDB_PASSWORD='${{Postgres.PGPASSWORD}}'
+railway variables --set "DB_POSTGRESDB_HOST=${{Postgres.PGHOST}}"
+railway variables --set "DB_POSTGRESDB_PORT=${{Postgres.PGPORT}}"
+railway variables --set "DB_POSTGRESDB_DATABASE=${{Postgres.PGDATABASE}}"
+railway variables --set "DB_POSTGRESDB_USER=${{Postgres.PGUSER}}"
+railway variables --set "DB_POSTGRESDB_PASSWORD=${{Postgres.PGPASSWORD}}"
 ```
 
 Note: Railway will automatically resolve these `${{...}}` references to the actual values.
