@@ -33,7 +33,7 @@ Select your project from the list.
 ## Step 3: Add PostgreSQL Database
 
 ```bash
-railway add --plugin postgresql
+railway add --database postgres
 ```
 
 This creates a PostgreSQL database in your Railway project.
